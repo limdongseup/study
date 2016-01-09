@@ -1,0 +1,12 @@
+Lesson 01 추상화 소개
+
+1) 추상화란?
+    - 객체들의 공통적인 프로퍼티와 메서드를 뽑아내는 작업
+    - 추상화는 오직 선언 부분만을 정의할 뿐 구현 부분은 작업하지 않는다.
+
+2) 예제
+    01_TV를 추상화하기
+        - 프러퍼티 : 모델명, 해상도크기, 메서드 : 전원on, 전원off, 채널변경, 볼륨변경
+    02_이미지 슬라이드 추상화하기
+        - 프러퍼티 : selectIndex(현재 선택된 이미지 index), $imageList(이미지목록), 메서드 : ImageSlider(selector) 생성자, startAutoPlay() 자동 플레이 기능 시작, stopAutoPlay() 자동 플레이 기능 멈춤, nextImage() 다음 이미지 이동, prevImage() 이전 이미지 이동, setImageAt(index) index번째 이미지 이동
+

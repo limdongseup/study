@@ -1,0 +1,42 @@
+1. 스크립트의 위치
+    - head에서 파일받은후 실행시간이 있기에 체감속도가 떨어짐
+    - 최신브라우저는 script파일을 동시에 내려받아 성능이 좋아지긴 했지만 완전히 해결되지 않음. 스크립트의 차단성은 여전히 문제
+    - </body>위에 <script>위치를 권장
+
+2. 스크립트 묶기
+    - <script> 태그를 만날 때마다 코드를 실행하는 지연 시간을 최소화 하면 페이지의 전반적인 성능을 개선
+    - 참조하는 외부 js 파일의 수를 줄이는게 좋음
+    - <script>하나로 불러오면 성능에 미치는 영향을 최소화
+
+3. 비차단 스크립트
+    - 자바스크립트 파일을 하나로 묶어서 http요청이 한 번만 일어나도 파일이 크면 브라우저는 오랫동안 멈춤. 이 문제를 해결하려면 브라우저 프로세서를 차단하지 않으면서 자바스크립트를 점진적으로 불러오는 방법 필요
+    - 비차단 스크립트를 만드는비결은 페이지를 완전히 불러온 다음 자바스크립트 소스 코드를 불러옴. winodw객체에서 onload
+
+    1) 지연 스크립트
+        - defer속성이 있는 스크립트는 내려받지만 dom이 완전히 로드되기전에는 실행하지 않는다
+        - defer속성을 지원하는 브라우저는 script, defer, load순으로 메세지 표시
+
+    2) 동적 태그
+        - var script = document.createElement("script")
+          script.type = "text/javascript"
+          script.src = "file.js"
+          document.getElementByTagName("head")[0].appendChild(script)
+        - 내려받는 위치에 관계없이 페이지의 다른작업을 차단하지 않으면서 내려받고 실행
+        - script동적로딩.js 참고
+
+    3) XMLHttpRequest 스크립트 삽입
+        - 장점은 코드를 내려받지만 즉시 실행하지 않아도 된다는 장점
+        - 모든 최신 브라우저에서 동작
+        - 단점은 같은 도메인에 있어야 하기때문에 cdn을 통해서 내려받을수 없다
+
+4. 추천하는 비차단 패턴
+- 많은 양의 자바스크립트를 페이지에 불러올때는
+- 먼저 동적으로 불러오는데 필요한 코드를 쓰고, 페이지를 표시하는데 필요한나머지 코드를 그 다음에 불러오는 방식
+- 처음코드는 loadScript() 함수 하나면 충분할 만큼 아주 작으므로 빠르게 내려받아서 실행 가능하고 성능에 영향을 끼치지 않음
+- 이후
+<script type="text/javascript" src="loader.js"></script>
+<script type="text/javascript">
+    loadScript("the-rest.js", function() {
+        Application.init();
+    }
+</script>

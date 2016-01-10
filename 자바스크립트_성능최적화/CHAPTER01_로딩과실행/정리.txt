@@ -30,13 +30,13 @@
         - 단점은 같은 도메인에 있어야 하기때문에 cdn을 통해서 내려받을수 없다
 
 4. 추천하는 비차단 패턴
-- 많은 양의 자바스크립트를 페이지에 불러올때는
-- 먼저 동적으로 불러오는데 필요한 코드를 쓰고, 페이지를 표시하는데 필요한나머지 코드를 그 다음에 불러오는 방식
-- 처음코드는 loadScript() 함수 하나면 충분할 만큼 아주 작으므로 빠르게 내려받아서 실행 가능하고 성능에 영향을 끼치지 않음
-- 이후
-<script type="text/javascript" src="loader.js"></script>
-<script type="text/javascript">
-    loadScript("the-rest.js", function() {
-        Application.init();
-    }
-</script>
+    - 많은 양의 자바스크립트를 페이지에 불러올때는
+    - 먼저 동적으로 불러오는데 필요한 코드를 쓰고, 페이지를 표시하는데 필요한나머지 코드를 그 다음에 불러오는 방식
+    - 처음코드는 loadScript() 함수 하나면 충분할 만큼 아주 작으므로 빠르게 내려받아서 실행 가능하고 성능에 영향을 끼치지 않음
+    - 이후
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript">
+        loadScript("the-rest.js", function() {
+            Application.init();
+        }
+    </script>

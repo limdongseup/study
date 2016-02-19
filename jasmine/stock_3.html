@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
+
+  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.1/boot.js"></script>
+
+  <script type="text/javascript" src="src/Stock.js"></script>
+  <script type="text/javascript" src="src/Investment.js"></script>
+
+  <script type="text/javascript" src="spec/InvestmentSpec.js"></script>
+
+  <script>
+    /*
+    * 주식 투자 애플리케이션에서 주식 투자를 정의하는 4가지 수락기준
+    * 1. 주식 투자자는 대상이 주식이어야 한다.
+    * 2. 주식 투자는 매수 수량이 있어야 한다.
+    * 3. 주식 투자는 매수 단가가 있어야 한다.
+    * 4. 주식 투자는 비용이 수반된다.
+    *
+    * 2번 주식 투자는 매수 수량이 있어야 한다 구현
+    *
+    *
+    * spec/investmentSpec.js
+    *
+    * describe("주식 투자는", function() {
+    *   it("대상이 주식이어야 한다", function() {
+    *     var stock = new Stock();
+    *     var investment = new Investment({
+    *       stock : stock,
+    *       shares : 100
+    *     });
+    *     expect(investment.stock).toBe(stock);
+    *   });
+    *
+    *   it("매수 수량이 있어야 한다", function() {
+    *     var stock = new Stock();
+    *     var investment = new Investment({
+    *       stock : stock,
+    *       shares : 100
+    *     });
+    *     expect(investment.shares).toEqual(100);
+    *   });
+    * });
+    *
+    * shares 인자를 하나 더 추가, Investment 인스턴스 인자 부분을 수정 하고 src/investment.js 수정
+    *
+    * src/investment.js
+    *
+    * function Investment(parameters) {
+    *   var params = parameters || {};
+    *   this.stock = params.stock;
+    *   this.shares = params.shares;
+    * }
+    *
+    * << Stock과 Investment변수를 초기화 하는 코드가 중복임을 알수가있다>>
+    *
+    * 중복을 피하기위해 재스민은 beforeEach라는 전역함수를 제공
+    * 각 스펙의 실행 전 호출
+    *
+    * describe("주식 투자는", function() {
+       var stock, investment;
+
+       beforeEach(function() {
+         stock = new Stock();
+         investment = new Investment({
+           stock : stock,
+           shares : 100
+         });
+       });
+
+       it("대상이 주식이어야 한다", function() {
+        expect(investment.stock).toBe(stock);
+       });
+
+       it("매수 수량이 있어야 한다", function() {
+        expect(investment.shares).toEqual(100);
+       });
+     });
+    *
+    *
+    * 3, 4번 스펙 추가
+    *
+    * ※ 지금까지 스펙이 실패한 것을 먼저 보고 나서야 코드를 고쳤다는 사실을 눈여겨 보기 바란다.
+    *    실패한 스펙을 보지 않고서 뭘 고쳐야 할지 어떻게 알 수 있단 말인가? 이것이 테스트를 테스트 하는 개념이다.
+    * */
+  </script>
+
+
+
+</head>
+
+<body>
+</body>
+</html>

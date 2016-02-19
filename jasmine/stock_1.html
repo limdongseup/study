@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
+
+  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.1/boot.js"></script>
+
+  <script type="text/javascript" src="spec/InvestmentSpec.js"></script>
+
+  <script>
+    /*
+    * 주식 투자 애플리케이션에서 주식 투자를 정의하는 4가지 수락기준
+    * 1. 주식 투자자는 대상이 주식이어야 한다.
+    * 2. 주식 투자는 매수 수량이 있어야 한다.
+    * 3. 주식 투자는 매수 단가가 있어야 한다.
+    * 4. 주식 투자는 비용이 수반된다.
+    *
+    * 첫번째 해야할일
+    * 파일생성(관례적으로 /spec 폴더에 생성함)
+    * investmentSpec.js 생성
+    *
+    * investmentSpec 테스트코드 작성 후 stock_1.html 에 붙인다
+    *
+    *
+    * 코드
+    * describe("주식 투자는", function() {
+    *   it("대상이 주식이어야 한다", function() {
+    *     expect(investment.stock).toBe(stock);
+    *   });
+    * });
+    *
+    *
+    * 코드설명
+    * describe
+    * - describe은 테스트 컨텍스트를 정의하는 자스민의 전역함수
+    *
+    * it
+    * - 스펙
+    *
+    * expect
+    * - 어설션(리턴값아 참이면 어설션은 성공한 것으로 간주)
+    * - expect함수는 실제값 즉 테스트 대상이 되는 데이터 하나만 인자로 취함
+    * - 항상 바로 뒤에 매처 함수가 체이닝
+    *
+    * toBe
+    * - 매처(기댓값)
+    * - 기댓값이 실제값과 동일한지 여부를 알아보는 것
+    *
+    * 재스민은 내부적으로 실제값(investment.stock) 과 기댓값(stock)이 똑같은지 비교하고 같지 않으면 실패한 것으로 처리한다.
+    *
+    * [[실행]]
+    * */
+  </script>
+
+
+
+</head>
+
+<body>
+</body>
+</html>

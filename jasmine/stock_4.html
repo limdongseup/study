@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
+
+  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.1/boot.js"></script>
+
+  <script type="text/javascript" src="src/Stock.js"></script>
+  <script type="text/javascript" src="src/Investment.js"></script>
+
+  <script type="text/javascript" src="spec/InvestmentSpec.js"></script>
+
+  <script>
+    /*
+    * 스펙간 유사 행위가 있을때 describe 함수를 중첩가능
+    *
+    * 1. 주식 투자는 주가가 상승하면 투자 수익률은 야의 값을 가진다.
+    * 2. 주식 투자는 주가가 상승하면 우량 투자다
+    *
+    *  주가가 상승하면이라는 행위를 공유
+    *
+    *  describe 안에 describe 삽입 가능
+    *  기능상의 차이는 없으므로 얼마든지 스펙을 추가 하거나 구성/정리 함수를 붙일수 있다.
+    *
+    *  구성과 정리
+    *  바깥쪽 구성/정리 함수 참조
+    *
+    *  describe("주식 투자는", function() {
+     var stock, investment;
+
+         beforeEach(function() {
+             stock = new Stock();
+             investment = new Investment({
+                 stock : stock,
+                 shares : 100,
+                 sharePrice : 20
+             });
+         });
+
+        .... 생략
+
+         // 중첩
+         describe("주가가 상승하면", function() {
+             beforeEach(function() {
+                stock.sharePrice = 40;
+             });
+         });
+     });
+    *
+    * 행위를 공유하여 스펙 코딩
+    *
+     // 중첩
+     describe("주가가 상승하면", function() {
+         beforeEach(function() {
+            stock.sharePrice = 40;
+         });
+
+         it("투자 수익률은 양(+)의 값을 가진다", function() {
+            expert(investment.roi()).toEqual(1);
+         });
+
+         it("우량 투자자ㅏ다", function() {
+            expert(investment.isGood()).toBeTruthy();
+         });
+     });
+
+     src/Inverstment.js
+
+    *
+    * */
+  </script>
+
+
+
+</head>
+
+<body>
+</body>
+</html>

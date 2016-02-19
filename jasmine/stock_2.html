@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
+
+  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.1/boot.js"></script>
+
+  <script type="text/javascript" src="src/Stock.js"></script>
+  <script type="text/javascript" src="src/Investment.js"></script>
+
+  <script type="text/javascript" src="spec/InvestmentSpec.js"></script>
+
+  <script>
+    /*
+    * 주식 투자 애플리케이션에서 주식 투자를 정의하는 4가지 수락기준
+    * 1. 주식 투자자는 대상이 주식이어야 한다.
+    * 2. 주식 투자는 매수 수량이 있어야 한다.
+    * 3. 주식 투자는 매수 단가가 있어야 한다.
+    * 4. 주식 투자는 비용이 수반된다.
+    *
+    * 코드
+    * describe("주식 투자는", function() {
+    *   it("대상이 주식이어야 한다", function() {
+    *     expect(investment.stock).toBe(stock);
+    *   });
+    * });
+    *
+    * 위 코드를 실행하면은 에러가 뜬다. investment변수가 정의되지 않음
+    *
+    * spec/investment.js
+    *
+    * describe("주식 투자는", function() {
+    *   it("대상이 주식이어야 한다", function() {
+    *     var investment = new Investment();
+    *     expect(investment.stock).toBe(stock);
+    *   });
+    * });
+    *
+    * investment 인스턴스 생성후 실행하면은 Investment is not defined 에러
+    * src 폴더에 실제값에 들어갈 Investment 함수 생성
+    *
+    * src/investment.js
+    *
+    * function Investment() {
+    *
+    * };
+    *
+    * Investment함수 생성후 실행하면은 stock is not defined 에러
+    *
+    * spec/investment.js
+    *
+    * describe("주식 투자는", function() {
+    *   it("대상이 주식이어야 한다", function() {
+    *     var stock = new Stock();
+    *     var investment = new Investment();
+    *     expect(investment.stock).toBe(stock);
+    *   });
+    * });
+    *
+    * stock 인스턴스를 생성후 실행하면은 Stock is not defined 에러
+    *
+    * src/stock.js
+    *
+    * function Stock() {
+    *
+    * }
+    *
+    * stock 함수 생성후 실행하면은 undefined to be 에러
+    *
+    * src/Investment.js
+    * function Investment(stock) {
+    *   this.stock = stock;
+    * }
+    *
+    * spec/investmentSpec.js
+    *
+    * describe("주식 투자는", function() {
+    *   it("대상이 주식이어야 한다", function() {
+    *     var stock = new Stock();
+    *     var investment = new Investment(stock);
+    *     expect(investment.stock).toBe(stock);
+    *   });
+    * });
+    *
+    * ※ 스펙을 먼저 실행해보고 실패하면 코드를 작성한다는 점을 기억.
+    *    실패한 스펙의 오류를 고치는 것이 목적이 아닌 상황에서는 코드를 작성하지 않는 것이 포인트
+    *
+    * */
+  </script>
+
+
+
+</head>
+
+<body>
+</body>
+</html>

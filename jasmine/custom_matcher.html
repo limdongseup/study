@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    /*
+     * expect(investment.isGood()).toBeTruthy();
+     * 위 기대식은 실행은 되지만 표현적이지가 않다.
+     * expect(investment).toBeAGoodInvestment();
+     * 이렇게 바꾸면 수락기존과 더 연관되어 보인다.
+     *
+     * 구현방법
+     * 구성함수(beforeEach)나 스펙(it) 내부에 this.addMatchers라는 재스민 함수를 호출하면된다.
+     *
+     * 재스민에서는 spec/SpecHelper.js 파일이 커ㅓ스텀 매처를 등록하는 기본 저장소.
+     *
+     * spec/SpecHelper.js
+     beforeEach(function() {
+         this.addMatchers({
+             toBeAGoodInvestment: function() {
+
+             }
+         });
+     });
+     *
+     * 재스민 매처는 기대식이 참이면 true, 거짓이면 false를 리턴하는 간단한 함수
+     * 그러나 매처를 구현하려면 실제값을 참조해야하는데 이때 this.actual 프로퍼티가 접근 수단이 된다.
+     *
+     * spec/SpecHelper.js
+     beforeEach(function() {
+         this.addMatchers({
+             toBeAGoodInvestment: function() {
+                 var investment = this.actual;
+                 return investment.isGood();
+             }
+         });
+     });
+
+     investment 객체에 접근해서 isGood() 함수의 결과값을 리턴
+
+
+
+     *
+     * 기대식을 커스텀 매처로 변경ㅇ했지만 스펙의 실행결과는 똑같이 성공
+     * 그런데! 스펙이 실패하면 재스민은 어떤 에러 메세지를 던질까?
+     * 적절하지 않는 메세지가 나올것이다.
+     * 그래서 메세지를 커스터마이징할수가 있다.
+     *
+     *
+     beforeEach(function() {
+         this.addMatchers({
+             toBeAGoodInvestment: function() {
+             var investment = this.actual;
+
+             this.message = function() {
+                return 'Expected investment to be a good investment';
+             };
+
+             return investment.isGood();
+             }
+         });
+     });
+     * */
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    /*
+     * 매처는 커스텀매처, 내장 매처로 나뉜다.
+     *
+     * 내장매처
+     *   1. toEqual
+     *      - 가장 빈번하게 사용
+     *      - 원시타입(숫자, 문자열, 불린, 객체, 배열) 비교
+     *
+     *  describe("toEqual 테스트", function() {
+     *      it("동등한 숫자이다", function() {
+     *          expect(1).toEqual(1);
+     *      });
+     *
+     *      ...
+     *          expect(true).toEqual(true);
+     *          expect({a:"testing"}).toEqual({a:"testing});
+     *          expect([1,2,3]).toEqual([1,2,3]);
+     *  });
+     *
+     *  2. toBe
+     *      - 원시타입을 비교할때는 toEqual과 동일한 결과
+     *      - 원시타입이 아닐때는 다르다.
+     *      - 엄격한 동등 비교 연산자(===)를 사용
+     *      - 특별한 경우가 아니라면 toEqual 매처를 사용
+     *
+     *  3. toBeTruthy, toBeFalsy
+     *      - 불린 값 truthy, falsy 표기
+     *      describe("toBeFalsy테스트", function() {
+     *         it("undefined는 falsy다", function() {
+     *             expect(undefined).toBeFalsy();
+     *         });
+     *      });
+     *
+     *      describe("toBeTruthy테스트", function() {
+     *         it("true는 truthy다", function() {
+     *              expect(true).toBeTruthy();
+     *         ));
+     *      });
+     *
+     *  4. toBeUndefined, toBeNull, toBeNaN
+     *  expect(undefined).toBeUndefined();
+     *  expect(null).toBeNull();
+     *  expect(NaN).toBeNaN();
+     *
+     *  5. toBeDefined
+     *      - 변수의 정의 여부만 체크
+     *      - undefined를 제외한 어떤값도(null 포함) true이다.
+     *      expect(null).toBeDefined();
+     *
+     *      6. toContain
+     *          - 어떤 배열이 엘리먼트를 포함하고있는지, 어떤 문자열이  포함되고 있는지 확인
+     *          expect("My big string").toContain("big");
+     *          expect([1,2,3]).toContain(2);
+     *
+     *      7. toMatch
+     *           - 문자열 비교를 할때 정확한 문자열비교를 위해 정규식을 사용해야 할경우
+     *           expect("My big matched string").toMatch(/My(.+)string/);
+     *
+     *      8. toBeLessThan, toBeGreater
+     *          - 숫자가 크고 작음을 비교
+     *          expect(1).toBeLessThan(2);
+     *          expect(2).toBeGreaterThan(1);
+     *
+     *      9. toThrow
+     *           - 뭔가 잘못되었을 때 보여주기 위한 프로그래밍 언어장치
+     *           - 익명함수가 동작하고 이 함수가 sme exception예외를 던지면 테스트는 성공적
+     *
+     *           describe("toThrow 테스트", function() {
+     *               it("예외가 던져져야 한다", function() {
+     *                   expect(function() {
+     *                       throw("Some expection");
+     *                   }).toThrow("some exception");
+     *               });
+     *           });
+     *
+     * */
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+.boardGroup
+{
+    position: fixed;
+    top: 30px;
+    left: 50%;
+
+    width: 600px;
+    margin-left: -300px;
+}
+.boardGroup:after
+{
+    position: absolute;
+    top: 29px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    content: '';
+
+    background: #d1d1d1;
+}
+.boardGroup dt
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.boardGroup dt button
+{
+    font-weight: bold;
+
+    width: 88px;
+    height: 29px;
+
+    color: #9a9a9a;
+    border-top: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    border-left: 1px solid #d1d1d1;
+    background: #f3f3f3;
+}
+.boardGroup .tab2 dt
+{
+    left: 87px;
+}
+.boardGroup dd
+{
+    padding-top: 50px;
+}
+.boardGroup dd .more
+{
+    font-weight: bold;
+
+    display: inline-block;
+
+    padding: 3px;
+
+    color: #a9282d;
+    border: 1px solid #a9282d;
+}
+.more
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.boardGroup dd
+{
+    display: none;
+}
+.boardGroup dl.on dt button
+{
+    z-index: 10;
+
+    height: 30px;
+
+    color: #a9282d;
+    background: #fff;
+}
+.boardGroup dl.on dd
+{
+    display: block;
+}
+.boardGroup dd li
+{
+    margin-bottom: 10px;
+}
+.boardGroup .tab3 dt
+{
+    left: 174px;
+}
+.boardGroup li
+{
+    position: relative;
+
+    clear: both;
+    overflow: hidden;
+
+    padding-right: 75px;
+    padding-left: 10px;
+}
+.boardGroup li span
+{
+    position: absolute;
+    top: 2px;
+    right: 0;
+
+    color: #949494;
+}
+.boardGroup li p
+{
+    overflow: hidden;
+
+    height: 14px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+}
+.menu2
+{
+    top: 30px;
+    left: 30px;
+
+    margin: 0;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "gulptask",
+  "version": "1.0.0",
+  "description": "1. **스터디 목적**  \r     - html, css, js 반복 작업을 최소화\r     - 코드 최적화\r     - 개발 시간 단축\r     - 이직할때 면접관이 물어보면은 좋은 어필을 할수있다      \r 2. **프로젝트 관리 build-tool이란?**  \r     빌드 자동화란 개발자가 반복적으로 수행하는 다양한 작업을 자동화 또는 스크립트로 만드는 행위로, 소스코드를 컴파일하기,  패키징하기, 테스트 수행하기, 운영시스템으로 배포하기, 문서 생성하기 등 작업을 포함한다.\r 3. **build-tool의 종류**\r     - grunt  :  가장 많이 쓰이고 있는 빌드툴, 가장많은 플러그인 보유(약 5,470개)\r     - gulf : 두번째로 많이 쓰이고있는 빌드툴, 현재 grunt에서 gulf로 많이 전환되는 상황인거 같음. 왜냐면 속도면에서 grunt보다 훨씬 빠르다. 하지만 플러그인의 종류가 grunt보다 적다\r 4. **webstorm**\r     - 사용법\r         - 프로젝트 생성 (File - New Project)\r         - Terminal (윈도우의 cmd)\r         - 리펙토링 (Refactor)\r         - 화면분활 (Tab에서 마우스 오른쪽)\r         - 테마변경 (Settings - Editor - Color&fonts)\r         - 라인선\r         - 다양한 플러그인 (Settings - Plugins)\r         - 자동완성\r         - 문서간 링크(링크를 ctrl + 마우스왼쪽클릭)\r         - emmet 지원\r         - 코드 포맷 및 자동 들여쓰기 (Code - Reformat Code, Code - Auto Indent Line)\r         - 등 (스스로 학습)\r     - 장점 \r         - 다양한 툴지원\r         - Version Control이 쉽다\r         - 로컬에서 버전관리가 된다\r         - Terminal 내장\r         - 다양한 플러그인이 존재하고 이용하기 편리하다\r         - 리펙토리 기능이 좋다\r     - 단점\r         - 유료다\r         - 무겁다\r         - ftp접속이 안된다.(찾아보면 될지도 모르겠지만 들어본적이 없음)\r 5. **왜 Gulp인가?**\r     - Grunt보다 쉽다\r     - 빠르다\r     - 플러그인의 종류가 grunt보다 없다하더라도 우리가쓰는 플러그인은 다있다.\r     - 많은 사람들이 grunt에서 gulp로 넘어가는 추세이다\r     - 이직할때 면접관이 물어보면은 좋은 어필을 할수있다 \r 6. **Webstorm을 이용해서 Gulp를 이용해보자**\r     - 폴더설정(편리한대로)\r         - 작업폴더(src - images, script, style)\r         - 결과폴더(dist - css, img, js)\r     - 터미널에서 npm init",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongseup/study_gulpTask.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dongseup/study_gulpTask/issues"
+  },
+  "homepage": "https://github.com/dongseup/study_gulpTask#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5",
+    "gulp-webserver": "^0.9.1",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0"
+  }
+}

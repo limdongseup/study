@@ -7,6 +7,20 @@
     <link href="dist/css/common.min.css" rel="stylesheet"/>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="dist/js/tabMenu.plugin.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            $('.tabMenu').tabMenu({
+                showMore : 'show', // show or hide
+                size : '360', // size > tabwidth * length
+            });
+
+            $('.tabMenu2').tabMenu({
+                showMore : 'show', // show or hide
+                size : '360', // size > tabwidth * length
+                cookieName : 'CM2'
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="boardGroup tabMenu">

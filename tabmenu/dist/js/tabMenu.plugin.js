@@ -109,18 +109,6 @@
             new TabMenu($(this), options);
         });
     };
-
-
-    $(function() {
-        $('.tabMenu').tabMenu({
-            showMore : 'show', // show or hide
-            size : '360', // size > tabwidth * length
-        });
-
-        $('.tabMenu2').tabMenu({
-            showMore : 'show', // show or hide
-            size : '360', // size > tabwidth * length
-            cookieName : 'CM2'
-        });
-    });
 })(jQuery);
+
+

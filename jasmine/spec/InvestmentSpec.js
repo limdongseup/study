@@ -1,5 +1,4 @@
 // 1번 구현
-/*
 describe("주식 투자는", function() {
     it("대상이 주식이어야 한다", function() {
         var stock = new Stock();
@@ -7,10 +6,8 @@ describe("주식 투자는", function() {
         expect(investment.stock).toBe(stock);
     });
 });
-*/
 
-// 2~4번 구현
-/*
+// 2~4번 구현q
 describe("주식 투자는", function() {
     var stock, investment;
 
@@ -39,10 +36,10 @@ describe("주식 투자는", function() {
         expect(investment.cost).toEqual(2000);
     });
 });
-*/
 
 
 // describe 중첩
+/*
 describe("주식 투자는", function() {
     var stock, investment;
 
@@ -85,4 +82,4 @@ describe("주식 투자는", function() {
             expect(investment.isGood()).toBeTruthy();
         });
     });
-});
+});*/

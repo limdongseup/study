@@ -1,0 +1,56 @@
+데이터를 저장하는 장소에 따라 나중에 이용할때 속도가 크게 달라진다.
+데이터를 저장할 수 있는 장소는 네 가지이다.
+
+리터럴 값, 변수, 배열항목, 객체멤버
+
+1. 스코프 관리
+    - 함수형 자바스크립트를 이해하는 핵심
+
+    1) 스코프 체인과 식별자 해석
+    2) 식별자 해석 성능
+
+    - 안티패턴(매번 전역을 탐색)
+    function initUI() {
+        var bd = document.body,
+            link = document.getElementByTagName('a'),
+            i = 0,
+            len = link.length;
+
+            while(i < len) {
+                update(links[i++]);
+            }
+
+            document.getElementById('go-btn').onclick = function() {
+                start();
+            };
+
+            bd.className = 'active';
+    }
+
+    - 좋은패턴(전역을 한번만 탐색)
+    function initUI() {
+        var doc = document,
+            bd = doc.body,
+            links = doc.getElementByTagName('a'),
+            i = 0,
+            len = links.length;
+
+        while(i < len) {
+            update(links[i++]);
+        }
+
+        doc.getElementById('go-btn').onclick = function() {
+            start();
+        }
+
+        bd.className = 'active';
+    }
+
+   클로저, 스코프, 메모리
+   - function assignEvents(){
+      var id = "dxlsdf3";
+
+      document.getElementById('save-btn').onclick = function(event) {
+          saveDocument(id);
+      }
+   }

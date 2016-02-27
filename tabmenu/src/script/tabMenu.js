@@ -107,6 +107,8 @@
     $.fn.tabMenu = function(options) {
         $.each($(this), function() {
             new TabMenu($(this), options);
+
+            return this;
         });
     };
 })(jQuery);
